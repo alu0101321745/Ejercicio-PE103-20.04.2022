@@ -9,12 +9,14 @@ export abstract class FilterMap {
     constructor(private list: number[]) { }
     protected getlist(): number[] {return this.list;}
 
-    public run() {
-        this.filter(this.FiltrarMenor2);
+    public run(funcionFilter: (x: number) => boolean, funcionMap: (x: number) => number) {
+        this.filter(funcionFilter);
+        console.log(this.filter(funcionFilter));
         // hook
         this.afterFilter();
         // normal
-        this.map(this.funcionMapPor2);
+        this.map(funcionMap);
+        console.log(this.map(funcionMap));
         // hook
         this.afterMap();
     }
@@ -47,11 +49,11 @@ export abstract class FilterMap {
         return x * 2;
     }
     protected abstract reduce(lista: number[]): number;
-    // Metodos hooks que imprimen por pantalla los filtros y mapeos.
+    // Metodos hooks que imprimen por pantalla.
     protected afterFilter() {
-        console.log(this.filter(this.FiltrarMenor2));
+        console.log("Se ha realizado el filtro.");
     }
     protected afterMap() {
-        console.log(this.map(this.funcionMapPor2));
+        console.log("Se ja realizado el mapeo");
     }
 }

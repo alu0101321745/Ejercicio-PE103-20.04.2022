@@ -21,8 +21,8 @@ describe('Pruebas del ejercicio:', () => {
         expect(lista2).to.be.instanceOf(FilterMapSubReduce);
     });
     it("Funciona el método run por defecto:", () => {
-        expect(lista1.run()).to.be.eql(undefined);
-        expect(lista2.run()).to.be.eql(undefined);
+        expect(lista1.run(mayorQue2, por3)).to.be.eql(undefined);
+        expect(lista2.run(par, div2)).to.be.eql(undefined);
     });
     it("Funciona los metodos de filtrado:", () => {
         expect(lista1.filter(mayorQue2)).to.be.eql([3, 5]);

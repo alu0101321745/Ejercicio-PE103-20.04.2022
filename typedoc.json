@@ -2,7 +2,8 @@
     "entryPoints": [
         "./src/FilterMap.ts",
         "./src/FilterMapAndReduce.ts",
-        "./src/FilterMapSubReduce.ts"
+        "./src/FilterMapSubReduce.ts",
+        "./src/funciones.ts"
     ],
     "out": "./docs"
 }
