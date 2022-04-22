@@ -1,7 +1,9 @@
 name: SonarClound
 
-on: [push]
-
+on:
+  push:
+    branches:
+      - master
 jobs:
   sonarcloud:
     name: SonarCloud
